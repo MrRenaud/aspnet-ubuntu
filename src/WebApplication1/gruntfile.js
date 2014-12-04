@@ -15,7 +15,7 @@ module.exports = function (grunt) {
     });
 
     // This command registers the default task which will install bower packages into wwwroot/lib
-    grunt.registerTask("default", ["bower:install"]);
+    grunt.registerTask("default", ["sudo bower install"]);
 
     // The following line loads the grunt plugins.
     // This line needs to be at the end of this this file.
