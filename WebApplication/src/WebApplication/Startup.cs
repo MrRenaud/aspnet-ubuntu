@@ -9,7 +9,7 @@ namespace WebApplication
 {
     public class Startup
     {
-        public void ConfigureService(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
         }
@@ -21,12 +21,19 @@ namespace WebApplication
 
             //app.UseWelcomePage();
 
-            app.UseMvc();
-
-            app.Run(context =>
+            app.UseMvc(route =>
             {
-                return context.Response.WriteAsync("coucou toi");
+                route.MapRoute(
+                    name: "default",
+                    template: " {controller}/{action}/{id?}",
+                    defaults: new { controller = "home", action = "index" }
+                    );
             });
+
+            //app.Run(context =>
+            //{
+            //    return context.Response.WriteAsync("coucou vous");
+            //});
         }
     }
 }
