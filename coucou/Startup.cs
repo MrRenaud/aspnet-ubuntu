@@ -6,8 +6,11 @@ namespace KWebStartup
     {
         public void Configure(IApplicationBuilder app)
         {
-            app.UseStaticFiles();
-            app.UseWelcomePage();
+//	    app.Run(context => {
+//		return	context.Response.WriteAsync("Coucou");		
+//  	    });
+  //          app.UseStaticFiles();
+           // app.UseWelcomePage();
         }
     }
 }
